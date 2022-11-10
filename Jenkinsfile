@@ -29,10 +29,9 @@ done'''
       }
     }
 
-    stage('Build_job') {
+    stage('') {
       steps {
-        build(job: 'DevopsBasics', quietPeriod: 1, propagate: true, wait: true)
-        echo 'task completed'
+        timeout(time: 1)
       }
     }
 
