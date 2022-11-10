@@ -9,7 +9,7 @@ pipeline {
           }
         }
 
-        stage('error') {
+        stage('') {
           steps {
             sh '''#!/bin/bash
 valid=true
@@ -26,12 +26,6 @@ done'''
           }
         }
 
-      }
-    }
-
-    stage('') {
-      steps {
-        timeout(time: 1)
       }
     }
 
