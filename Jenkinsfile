@@ -3,15 +3,9 @@ pipeline {
   stages {
     stage('') {
       steps {
-        sh '''#!/bin/bash
-echo "Printing text with newline"
-echo -n "Printing text without newline"
-echo -e "\\nRemoving \\t backslash \\t characters\\n"'''
+        echo 'Hello Abhishek'
       }
     }
 
-  }
-  environment {
-    test = '1'
   }
 }
