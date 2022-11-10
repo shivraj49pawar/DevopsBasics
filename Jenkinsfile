@@ -9,7 +9,7 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
             sh '''#!/bin/bash
 valid=true
@@ -32,6 +32,7 @@ done'''
     stage('Build_job') {
       steps {
         build(job: 'DevopsBasics', quietPeriod: 1, propagate: true, wait: true)
+        echo 'task completed'
       }
     }
 
