@@ -9,7 +9,7 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
             sh '''#!/bin/bash
 valid=true
@@ -26,6 +26,12 @@ done'''
           }
         }
 
+      }
+    }
+
+    stage('Post Build steps') {
+      steps {
+        writeFile(file: 'test_1011.txt', text: 'Hello Woodpecker!!!')
       }
     }
 
