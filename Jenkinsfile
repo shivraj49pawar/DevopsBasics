@@ -9,7 +9,7 @@ pipeline {
 
     stage('Build_job') {
       steps {
-        build(job: 'Test_10112022', quietPeriod: 1, propagate: true, wait: true)
+        build(job: 'DevopsBasics', quietPeriod: 1, propagate: true, wait: true)
       }
     }
 
