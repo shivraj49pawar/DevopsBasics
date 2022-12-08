@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testing
+spec:
+  template:
+    metadata:
+      name: sas
+      labels:
+        app: viya
+    spec:
+      containers:
+        - name: redis
+          image: redis:6.0.4-alpine
+  replicas: 2
+  selector:
+    matchLabels:
+      app: viya
+
+
+---
+
+apiVersion: v1
+kind: POD
+metadata:
+  name: woods
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      
+      
+---
+
+apiVersion: v1
+kind: POD
+metadata:
+  name: sas
+spec:
+  containers:
+    - name: httpd
+      image: httpd
